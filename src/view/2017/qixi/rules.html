@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>活动规则</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <link rel="stylesheet" href="/statics/css/pages/2017/qixi/index.css">
+    <script src="/statics/js/plugins/adaptive.min.js"></script>
+    <script src="/statics/js/common/common.js"></script>
+</head>
+
+<body>
+    <div class="rulesContent">
+        <p>1. 活动时间：2017年8月25日—2017年8月31日；</p>
+        <p>2. 活动期间每天10：00、15：00、21：00整点抢七夕活动专享标赢冈本001超薄避孕套，每个整点限量10份，每个账户限领1份；</p>
+        <p>3. 领取红包不可用于新手体验标、新手加息标、超级经纪人新手专享标、周一放肆送活动标、热血圣战活动专享标、假日宝；</p>
+        <p>4. 本活动不与钱保姆其他活动奖励共享，活动标的不可转让；</p>
+        <p>5. 奖品不支持折价，将在20个工作日内完成发放，若活动结束3个工作日内未填写收货地址，将视为自动放弃奖品；因拒收或地址填写错误导致奖品无法送达，我们将不再补发；</p>
+        <p>6. 活动期间开启VIP约标服务通道，如有需要，请致电客服热线，客服电话： 400-606-7066；</p>
+        <p>7. 本次活动采用最新实时数据监控系统，如发现任何恶意刷奖行为，将在48小时内予以警告，若系统再次检测到恶意刷奖行为将自动取消活动资格及奖励；</p>
+        <p>8. 钱保姆保留对本次活动在法律允许范围内的最终解释权。</p>
+    </div>
+</body>
+<script>
+window.onload = function() {
+    function connectWebViewJavascriptBridge(callback) { //判断APP是否支持WebViewJavascriptBridge
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener('WebViewJavascriptBridgeReady', function() {
+                callback(WebViewJavascriptBridge)
+            }, false)
+        }
+    }
+    connectWebViewJavascriptBridge(function(bridge) {
+
+        //加载页面后调用
+        bridge.init(function(message, responseCallback) {
+            var data = { 'Javascript Responds': 'Wee!' }
+            responseCallback(data);
+        });
+
+        bridge.registerHandler('goBackBtnHandler', function(data, responseCallback) {
+            var backLink = webUrl + "/view/2017/qixi/index.html?interaction=1&userId=" + getUrlParam('userId');
+            responseData = { 'title': "七夕活动", 'href': backLink, 'icon': 1, 'backBtn': 1 };
+            responseCallback(responseData);
+            if (typeof data == "string") data = JSON.parse(data);
+            if (data.result) location.href = backLink;
+        });
+    });
+}
+</script>
+
+</html>

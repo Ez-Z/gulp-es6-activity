@@ -1,0 +1,39 @@
+卷 软件 的文件夹 PATH 列表
+卷序列号为 000E-32E8
+D:.
+├─rev
+│  ├─css
+│  └─js
+├─statics
+│  ├─css
+│  │  ├─common
+│  │  └─pages
+│  │      └─2017
+│  │          ├─holiday2
+│  │          └─qixi
+│  ├─img
+│  │  ├─common
+│  │  └─pages
+│  │      └─2017
+│  │          ├─holiday2
+│  │          └─qixi
+│  └─js
+│      ├─common
+│      ├─pages
+│      │  └─2017
+│      │      ├─holiday2
+│      │      └─qixi
+│      ├─pages_es6
+│      │  └─2017
+│      │      └─qixi
+│      └─plugins
+│          ├─artTemplate
+│          ├─layer.m
+│          │  └─need
+│          ├─swiper
+│          ├─wx
+│          └─zepto
+└─view
+    └─2017
+        ├─holiday2
+        └─qixi
